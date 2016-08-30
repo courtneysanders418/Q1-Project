@@ -1,0 +1,37 @@
+.nav-wrapper {
+    background-color: white;
+}
+.parallax-container {
+    height: 450px;
+}
+#text {
+    background-color: white;
+    border-radius: 50px;
+}
+body {
+    font-family: 'Special Elite', cursive;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    width: 100%;
+}
+#LOGO {
+    font-weight: bolder;
+    font-size: 40px;
+}
+main {
+    flex: 1 0 auto;
+}
+footer {
+    background-color: red;
+}
+.row {
+    padding: 20px;
+}
+.card {
+    max-width: 100%;
+    max-height: 100%;
+}
+#mapid {
+    height: 180px;
+}

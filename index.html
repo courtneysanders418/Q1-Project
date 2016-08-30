@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.js"></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.3/dist/leaflet.css" />
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo center red-text" id="LOGO">Climbing Guides</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li>
+                    <a href="sass.html" class="black-text"></a>
+                </li>
+                <li>
+                    <a href="badges.html" class="black-text"></a>
+                </li>
+                <li>
+                    <a href="collapsible.html" class="black-text"></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+    <!--  parallax-->
+    <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br>
+                <br>
+                <h1 class="header center black-text text-lighten-2">FIND A GUIDE</h1>
+                <div class="row center">
+                    <span>
+                      <form>
+                        <input type="text" id="text" placeholder="   Search..." required >
+                        <input type="button" class="submitButton" value="Search">
+                      </form>
+                    </span>
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>
+        <div class="parallax"><img src="http://static1.squarespace.com/static/53000089e4b0ee230b356322/t/54377c12e4b0f6c2bef821fd/1395028329421/3-7-2012-oliana-89.jpg?format=1000w" alt="Unsplashed background img 1"></div>
+    </div>
+
+<!-- results -->
+    <div class="row">
+        <div class="col s12 m12" id='mapid'>
+        </div>
+    </div>
+
+    <!-- cards -->
+    <div class="row">
+
+
+        <div class="card col s12 m4">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="http://images.nitrosell.com/product_images/4/809/large-red%20river%20gorge%20north.jpg?_ga=1.169077793.1469656553.1472508433">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+
+
+
+        <div class="card col s12 m4">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="http://cdn1.bigcommerce.com/n-yp39j5/48dohlyc/products/124/images/308/a6473ab136598cbd5ca32b_l__24104.1383282711.490.588.jpg?c=2">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+
+
+        <div class="card col s12 m4">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="http://cdn1.bigcommerce.com/n-yp39j5/48dohlyc/products/118/images/362/SWUCover__30313.1434128089.490.588.jpg?c=2">
+            </div>
+            <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
+                <p><a href="#">This is a link</a></p>
+            </div>
+            <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- footer -->
+    <footer class="page-footer red darken-3">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!--Import jQuery before materialize.js-->
+
+    <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
+    <script type="text/javascript" src="app.js"></script>
+</body>
+
+</html>
