@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/cswoods88/Q1-Project#readme",
   "dependencies": {
-    "connect": "^3.4.1",
-    "serve-static": "^1.11.1"
+    "express": "^4.14.0"
   }
 }
