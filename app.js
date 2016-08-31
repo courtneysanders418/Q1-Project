@@ -15,17 +15,17 @@ $(document).ready(function() {
 
 
     function getInfo() {
-      var searchTerm = $('#text').val();
-      console.log( "search" + searchTerm);
-      var encoded = encodeURIComponent(searchTerm)
+        var searchTerm = $('#text').val();
+        console.log("search" + searchTerm);
+        var encoded = encodeURIComponent(searchTerm)
         console.log("encoded" + encoded);
         $.ajax({
             method: 'POST',
             url: `https://serene-meadow-60538.herokuapp.com/api/crags/search/${encoded}`,
             datatype: 'json',
             success: function(data) {
-                if(!data.items.length){
-                  Materialize.toast('please enter another search term')
+                if (!data.items.length) {
+                    Materialize.toast('please enter another search term')
                 }
                 var long = data.items[0].location.longitude;
                 var lat = data.items[0].location.latitude;
@@ -41,8 +41,8 @@ $(document).ready(function() {
                     }
                 })
             },
-            error: function (err) {
-              console.log('there was an error:',err);
+            error: function(err) {
+                console.log('there was an error:', err);
 
             }
         })
@@ -53,11 +53,8 @@ $(document).ready(function() {
     }
 
     L.mapbox.accessToken = 'pk.eyJ1IjoiY3N3b29kczg4IiwiYSI6ImNpc2kzZW16bjAwMnAzMHB1bG5lNzJ0NWIifQ.qm4p6yO3ABYa_YXYXZNlpg';
-    var mymap = L.mapbox.map('mapid', 'mapbox.streets');
-    .setView([40, -75], 9);
-    L.control.locate().addTo(mymap);
-
-
-
+        var map = L.mapbox.map('map', 'mapbox.streets');
+        L.control.locate().addTo(map);
+    // $('#map').append(map)
 
 });
