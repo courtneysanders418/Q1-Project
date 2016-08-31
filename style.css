@@ -33,5 +33,6 @@ footer {
     max-height: 100%;
 }
 #mapid {
-    height: 180px;
+    height: 400px;
+    width: 1000px;
 }
