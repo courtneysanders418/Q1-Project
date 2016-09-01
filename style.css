@@ -31,5 +31,10 @@ main {
 #map {
     min-height: 400px;
     min-width: 1000px;
-    
+
+}
+.description {
+  font-size: 25px;
+  text-align: center;
+  font-weight: bold;
 }
