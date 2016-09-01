@@ -3,6 +3,7 @@
 
 <head>
     <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 
@@ -13,7 +14,7 @@
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" media="screen" title="no title" charset="utf-8">
+
     <link href="https://fonts.googleapis.com/css?family=Special+Elite" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- mapbox -->
@@ -24,7 +25,9 @@
     <script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.min.js'></script>
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/L.Control.Locate.mapbox.css' rel='stylesheet' />
     <link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.43.0/css/font-awesome.min.css' rel='stylesheet' />
-
+    <!-- mapbox gl -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.23.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.23.0/mapbox-gl.css' rel='stylesheet' />
 
 </head>
 
@@ -33,18 +36,13 @@
     <!-- Navbar -->
     <nav>
         <div class="nav-wrapper">
-            <a href="#" class="brand-logo center red-text" id="LOGO">Climbing Guides</a>
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <a href="#" class="brand-logo center red-text" id="LOGO">Clmb.ng</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
                 <li>
-                    <a href="sass.html" class="black-text"></a>
-                </li>
-                <li>
-                    <a href="badges.html" class="black-text"></a>
-                </li>
-                <li>
-                    <a href="collapsible.html" class="black-text"></a>
+                    <a target="_blank" href="page2.html" class="black-text">Directions</a>
                 </li>
             </ul>
+            <img width="50px" id="reSearch" src="images/search-icon-2 (1).png" alt="" />
         </div>
     </nav>
 
@@ -56,14 +54,16 @@
             <div class="container">
                 <br>
                 <br>
-                <h1 class="header center black-text text-lighten-2">FIND A GUIDE</h1>
+                <h1 class="header center black-text text-lighten-2">SEARCH A CRAG</h1>
                 <div class="row center">
                     <span>
                       <form>
-                        <input type="text" id="text" placeholder="   Search..." required />
-                        <button class="submitButton">
-                          <i class="material-icons">search</i>
-                        </button>
+                        <div class="input" style="height:62px;width:856px;background-color:rgba(255, 255, 255, 0.49);">
+                          <div class="input-field col s6">
+                            <i class="material-icons prefix text-red" style="height:60px;width:50;">search</i>
+                            <input id="icon_prefix" type="text" id="text" class="myInput validate" style="font-size:18pt;width:800px;">
+                      </div>
+                        </div>
                       </form>
                     </span>
                 </div>
@@ -71,12 +71,12 @@
                 <br>
             </div>
         </div>
-        <div class="parallax"><img src="http://static1.squarespace.com/static/53000089e4b0ee230b356322/t/54377c12e4b0f6c2bef821fd/1395028329421/3-7-2012-oliana-89.jpg?format=1000w" alt="Unsplashed background img 1"></div>
+        <div class="parallax"><img src="images/Daniel_Woods_Hero_3.jpg" alt="Unsplashed background img 1"></div>
     </div>
 
-<!-- weather display -->
+    <!-- weather display -->
 
-
+    <div id='weatherDiv'></div>
 
     <!-- map -->
     <div class="row">
@@ -84,41 +84,19 @@
         </div>
     </div>
 
-
-
-
     <!-- footer -->
     <footer class="page-footer red darken-3">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="footer-copyright">
             <div class="container">
-                © 2014 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                &copy Courtney Woods
+                <a class="grey-text text-lighten-4 right" href="http://island.io">Island.io</a>
             </div>
         </div>
     </footer>
 
-
-    <!--Import jQuery before materialize.js-->
-
     <!-- <script type="text/javascript" src="js/materialize.min.js"></script> -->
     <script type="text/javascript" src="app.js"></script>
+
 </body>
 
 </html>

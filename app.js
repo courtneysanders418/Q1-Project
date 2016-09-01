@@ -1,60 +1,79 @@
 'use strict'
 
 $(document).ready(function() {
-    $('.parallax').parallax();
+    // map
+    L.mapbox.accessToken = 'pk.eyJ1IjoiY3N3b29kczg4IiwiYSI6ImNpc2kzZW16bjAwMnAzMHB1bG5lNzJ0NWIifQ.qm4p6yO3ABYa_YXYXZNlpg';
+    var map = L.mapbox.map('map', 'mapbox.streets');
+    L.control.locate().addTo(map);
+    
 
 
-    // var space = searchTerm.replace(/' '/g, '%20');
+    // Search Icon toggles back and forth between maps/weather and parralax
+    $('#reSearch').click(function() {
+        $('#index-banner').toggle()
 
-
-    $('.submitButton').click(function(e) {
-        e.preventDefault();
-
-        getInfo();
     })
 
+    // Submit Button
+    // $('.submitButton').click(function(e) {
+    //     e.preventDefault();
+    //     getInfo();
+    // })
 
+$('.myInput').keypress(function (event) {
+  if(event.which == 13){
+    event.preventDefault()
+    getInfo()
+  }
+})
+    // Api communication
     function getInfo() {
-        var searchTerm = $('#text').val();
-        console.log("search" + searchTerm);
+        var lat;
+        var long;
+        var searchTerm = $('.myInput').val();
         var encoded = encodeURIComponent(searchTerm)
-        console.log("encoded" + encoded);
+
+        // island.io API
         $.ajax({
             method: 'POST',
             url: `https://serene-meadow-60538.herokuapp.com/api/crags/search/${encoded}`,
             datatype: 'json',
             success: function(data) {
                 if (!data.items.length) {
-                    Materialize.toast('please enter another search term')
+                    Materialize.toast('Location not found', 3000)
                 }
-                var long = data.items[0].location.longitude;
-                var lat = data.items[0].location.latitude;
-                console.log(data);
-                // console.log(lat);
+                long = data.items[0].location.longitude;
+                lat = data.items[0].location.latitude;
 
+                // Initalizing map and giving access to current location
+
+                map.setView([lat, long], 9);
+                var location = L.marker([lat, long]).bindPopup(`This is ${searchTerm}`).addTo(map)
+                var weather;
+
+
+
+                // forcast.io API
                 $.ajax({
                     method: 'GET',
                     url: `https://api.forecast.io/forecast/809a83b8b5c17d7f929dda132a82066d/${lat},${long}`,
                     datatype: 'json',
                     success: function(data) {
                         console.log(data);
+                        let weather = data.currently;
+                        console.log(data.currently);
+                        $('#index-banner').hide()
+                        $('#weatherDiv').html(`<iframe id="forecast_embed" type="text/html" frameborder="0" height="245" width="100%" src="https://forecast.io/embed/#lat=${lat}&lon=${long}&name=${searchTerm}&color=#00aaff&font=Georgia&units=uk"></iframe>`)
                     }
                 })
             },
             error: function(err) {
                 console.log('there was an error:', err);
-
             }
         })
     }
 
-    function getWeather(long, lat) {
-
-    }
-
-    L.mapbox.accessToken = 'pk.eyJ1IjoiY3N3b29kczg4IiwiYSI6ImNpc2kzZW16bjAwMnAzMHB1bG5lNzJ0NWIifQ.qm4p6yO3ABYa_YXYXZNlpg';
-        var map = L.mapbox.map('map', 'mapbox.streets');
-        L.control.locate().addTo(map);
-    // $('#map').append(map)
-
+    function getWeather(long, lat) {}
+    // parralax
+    $('.parallax').parallax();
 });

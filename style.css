@@ -2,11 +2,10 @@
     background-color: white;
 }
 .parallax-container {
-    height: 450px;
+    height: 550px;
 }
-#text {
+.myInput {
     background-color: white;
-    border-radius: 50px;
 }
 body {
     font-family: 'Special Elite', cursive;
@@ -22,9 +21,6 @@ body {
 main {
     flex: 1 0 auto;
 }
-footer {
-    background-color: red;
-}
 .row {
     padding: 20px;
 }
@@ -35,4 +31,5 @@ footer {
 #map {
     min-height: 400px;
     min-width: 1000px;
+    
 }
